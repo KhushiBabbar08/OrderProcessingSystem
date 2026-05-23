@@ -32,17 +32,11 @@
 	<ItemGroup>
 		<Folder Include=".github\workflows\" />
 		<Folder Include="Configurations\" />
-		<Folder Include="Controllers\" />
-		<Folder Include="DTOs\" />
 		<Folder Include="Helpers\" />
-		<Folder Include="Interfaces\" />
 		<Folder Include="Middleware\" />
-		<Folder Include="Models\" />
 		<Folder Include="obj\Debug\net8.0\refint\" />
 		<Folder Include="obj\Debug\net8.0\ref\" />
 		<Folder Include="obj\Debug\net8.0\staticwebassets\" />
-		<Folder Include="Repositories\" />
-		<Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>
