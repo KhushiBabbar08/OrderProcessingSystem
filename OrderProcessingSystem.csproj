@@ -1,19 +1,58 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
-  </ItemGroup>
+	<ItemGroup>
+	  <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+	  <Compile Include="obj\Debug\net8.0\OrderProcessingSystem.AssemblyInfo.cs" />
+	  <Compile Include="obj\Debug\net8.0\OrderProcessingSystem.GlobalUsings.g.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="obj\Debug\net8.0\rpswa.dswa.cache.json" />
+	  <Content Include="obj\Debug\net8.0\staticwebassets.removed.txt" />
+	  <Content Include="obj\OrderProcessingSystem.csproj.nuget.dgspec.json" />
+	  <Content Include="obj\project.assets.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include=".github\workflows\" />
+		<Folder Include="Configurations\" />
+		<Folder Include="Controllers\" />
+		<Folder Include="DTOs\" />
+		<Folder Include="Helpers\" />
+		<Folder Include="Interfaces\" />
+		<Folder Include="Middleware\" />
+		<Folder Include="Models\" />
+		<Folder Include="obj\Debug\net8.0\refint\" />
+		<Folder Include="obj\Debug\net8.0\ref\" />
+		<Folder Include="obj\Debug\net8.0\staticwebassets\" />
+		<Folder Include="Repositories\" />
+		<Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="obj\Debug\net8.0\OrderProcessingSystem.AssemblyInfoInputs.cache" />
+	  <None Include="obj\Debug\net8.0\OrderProcessingSystem.assets.cache" />
+	  <None Include="obj\Debug\net8.0\OrderProcessingSystem.csproj.AssemblyReference.cache" />
+	  <None Include="obj\Debug\net8.0\OrderProcessingSystem.GeneratedMSBuildEditorConfig.editorconfig" />
+	  <None Include="obj\OrderProcessingSystem.csproj.nuget.g.props" />
+	  <None Include="obj\OrderProcessingSystem.csproj.nuget.g.targets" />
+	  <None Include="obj\project.nuget.cache" />
+	</ItemGroup>
 
 </Project>
