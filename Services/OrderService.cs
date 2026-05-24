@@ -1,6 +1,6 @@
 ﻿using OrderProcessingSystem.DTOs;
 using OrderProcessingSystem.Interfaces;
-using OrderProcessingSystem.Models;
+using OrderProcessingSystem.Entities;
 
 namespace OrderProcessingSystem.Services;
 

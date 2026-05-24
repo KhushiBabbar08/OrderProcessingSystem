@@ -34,6 +34,7 @@
 		<Folder Include="Configurations\" />
 		<Folder Include="Helpers\" />
 		<Folder Include="Middleware\" />
+		<Folder Include="Models\" />
 		<Folder Include="obj\Debug\net8.0\refint\" />
 		<Folder Include="obj\Debug\net8.0\ref\" />
 		<Folder Include="obj\Debug\net8.0\staticwebassets\" />
