@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using OrderProcessingSystem.Data;
+using OrderProcessingSystem.Entities;
 using OrderProcessingSystem.Interfaces;
 using OrderProcessingSystem.Repositories;
 using OrderProcessingSystem.Services;
@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<OrderProcessingDbContext>(options =>
 {
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection"));

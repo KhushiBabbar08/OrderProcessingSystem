@@ -7,6 +7,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Data\**" />
+	  <Content Remove="Data\**" />
+	  <EmbeddedResource Remove="Data\**" />
+	  <None Remove="Data\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
 	  <Compile Include="obj\Debug\net8.0\OrderProcessingSystem.AssemblyInfo.cs" />
 	  <Compile Include="obj\Debug\net8.0\OrderProcessingSystem.GlobalUsings.g.cs" />

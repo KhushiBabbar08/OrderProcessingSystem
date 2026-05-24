@@ -1,4 +1,4 @@
-﻿using OrderProcessingSystem.Models;
+﻿using OrderProcessingSystem.Entities;
 
 namespace OrderProcessingSystem.Interfaces;
 

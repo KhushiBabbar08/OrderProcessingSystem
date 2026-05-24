@@ -1,15 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OrderProcessingSystem.Data;
+using OrderProcessingSystem.Entities;
 using OrderProcessingSystem.Interfaces;
-using OrderProcessingSystem.Models;
 
 namespace OrderProcessingSystem.Repositories;
 
 public class OrderRepository : IOrderRepository
 {
-    private readonly ApplicationDbContext _context;
+    private readonly OrderProcessingDbContext _context;
 
-    public OrderRepository(ApplicationDbContext context)
+    public OrderRepository(OrderProcessingDbContext context)
     {
         _context = context;
     }
