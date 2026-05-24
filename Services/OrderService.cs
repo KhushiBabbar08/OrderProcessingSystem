@@ -1,6 +1,7 @@
 ﻿using OrderProcessingSystem.DTOs;
-using OrderProcessingSystem.Interfaces;
 using OrderProcessingSystem.Entities;
+using OrderProcessingSystem.Events;
+using OrderProcessingSystem.Interfaces;
 using System.Diagnostics;
 
 namespace OrderProcessingSystem.Services;
@@ -9,13 +10,16 @@ public class OrderService : IOrderService
 {
     private readonly IOrderRepository _repository;
     private readonly ICacheService _cacheService;
+    private readonly IKafkaProducerService _kafkaProducer;
 
     public OrderService(
         IOrderRepository repository,
-        ICacheService cacheService)
+        ICacheService cacheService,
+        IKafkaProducerService kafkaProducer)
     {
         _repository = repository;
         _cacheService = cacheService;
+        _kafkaProducer = kafkaProducer;
     }
 
     public async Task<List<Order>> GetAllAsync()
@@ -81,7 +85,6 @@ public class OrderService : IOrderService
 
         return order;
     }
-
     public async Task<Order> CreateAsync(CreateOrderDto dto)
     {
         var order = new Order
@@ -98,18 +101,30 @@ public class OrderService : IOrderService
         var createdOrder =
             await _repository.CreateAsync(order);
 
-        // Invalidate orders list cache
         await _cacheService.RemoveDataAsync("orders:all");
 
-        // Add newly created order into cache
         await _cacheService.SetDataAsync(
             $"orders:{createdOrder.Id}",
             createdOrder,
             TimeSpan.FromMinutes(5));
 
+        var orderCreatedEvent = new OrderCreatedEvent
+        {
+            OrderId = createdOrder.Id,
+            CustomerName = createdOrder.CustomerName,
+            ProductName = createdOrder.ProductName,
+            Quantity = createdOrder.Quantity,
+            Price = createdOrder.Price,
+            Status = createdOrder.Status,
+            CreatedDate = createdOrder.CreatedDate
+        };
+
+        await _kafkaProducer.PublishOrderCreatedAsync(
+            "order-created-topic",
+            orderCreatedEvent);
+
         return createdOrder;
     }
-
     public async Task<bool> UpdateStatusAsync(Guid id, string status)
     {
         var order = await _repository.GetByIdAsync(id);

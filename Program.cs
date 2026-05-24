@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using OrderProcessingSystem.BackgroundServices;
 using OrderProcessingSystem.Entities;
 using OrderProcessingSystem.Interfaces;
 using OrderProcessingSystem.Repositories;
@@ -28,9 +29,10 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 });
 
 builder.Services.AddScoped<ICacheService, CacheService>();
+builder.Services.AddScoped<IKafkaProducerService, KafkaProducerService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddHostedService<KafkaConsumerService>();
 
 var app = builder.Build();
 
