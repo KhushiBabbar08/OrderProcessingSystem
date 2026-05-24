@@ -34,6 +34,8 @@ C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\b
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\StackExchange.Redis.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -46,6 +48,7 @@ C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\b
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\System.IO.Hashing.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\Moksh Babbar\source\repos\OrderProcessingSystem\OrderProcessingSystem\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
