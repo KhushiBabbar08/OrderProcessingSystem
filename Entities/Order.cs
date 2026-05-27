@@ -18,4 +18,6 @@ public partial class Order
     public string? Status { get; set; }
 
     public DateTime CreatedDate { get; set; }
+
+    public virtual ICollection<OrderStatusHistory> OrderStatusHistories { get; set; } = new List<OrderStatusHistory>();
 }
