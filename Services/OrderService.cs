@@ -1,4 +1,5 @@
-﻿using OrderProcessingSystem.DTOs;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderProcessingSystem.DTOs;
 using OrderProcessingSystem.Entities;
 using OrderProcessingSystem.Events;
 using OrderProcessingSystem.Interfaces;
@@ -11,15 +12,17 @@ public class OrderService : IOrderService
     private readonly IOrderRepository _repository;
     private readonly ICacheService _cacheService;
     private readonly IKafkaProducerService _kafkaProducer;
-
+    private readonly IOrderHistoryService _historyService;
     public OrderService(
         IOrderRepository repository,
         ICacheService cacheService,
-        IKafkaProducerService kafkaProducer)
+        IKafkaProducerService kafkaProducer,
+        IOrderHistoryService historyService)
     {
         _repository = repository;
         _cacheService = cacheService;
         _kafkaProducer = kafkaProducer;
+        _historyService = historyService;
     }
 
     public async Task<List<Order>> GetAllAsync()
@@ -133,6 +136,17 @@ public class OrderService : IOrderService
             return false;
 
         order.Status = status;
+        var oldStatus = order.Status;
+
+        order.Status = status;
+
+        await _historyService.AddHistoryAsync(
+            order.Id,
+            oldStatus,
+            status,
+            "System",
+            "Order status updated",
+            "API");
 
         await _repository.UpdateAsync(order);
 
